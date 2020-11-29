@@ -1,13 +1,11 @@
 
-# Installation
-
-## Software tools
+# Software tools
 
 * kubectl
 * minikube
 * argocd
 
-## Cluster
+# Create Cluster
 
 Using minikube start a local k8s cluster
 
@@ -35,7 +33,7 @@ Setup IP addresses for ingress end-points
 echo "$(minikube ip) argocd.test" | sudo tee -a /etc/hosts
 ```
 
-## Install ArgoCD
+# Install ArgoCD
 
 ```
 kubectl create namespace argocd
@@ -72,7 +70,7 @@ spec:
 END
 ```
 
-### Login + Reset password
+## Login + Reset password
 
 Retrieve initial password
 
@@ -96,7 +94,19 @@ Change the password
 argocd account update-password
 ```
 
-### Check UI
+## Bootstrap platform
+
+```
+argocd app create apps \
+    --dest-namespace argocd \
+    --dest-server https://kubernetes.default.svc \
+    --repo https://github.com/myspotontheweb/k8s-platform.git \
+    --path bootstrap/chart  
+
+argocd app sync apps 
+```
+
+## Check UI
 
 * https://argocd.test
 
