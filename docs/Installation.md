@@ -44,7 +44,7 @@ kubectl patch deploy ingress-nginx-controller -n kube-system -p '[{"op":"add","p
 Setup IP addresses for ingress end-points
 
 ```
-echo "$(minikube ip) argocd.test" | sudo tee -a /etc/hosts
+echo "$(minikube ip) argocd.test argo.test minio.test" | sudo tee -a /etc/hosts
 ```
 
 # Install ArgoCD
