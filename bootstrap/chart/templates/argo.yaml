@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argo
+  namespace: argocd
+spec:
+  project: default
+  destination:
+    namespace: argo
+    server: {{ .Values.spec.destination.server }}
+  source:
+    chart: argo
+    repoURL: https://argoproj.github.io/argo-helm
+    targetRevision: 0.13.8
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
