@@ -12,6 +12,16 @@ spec:
     chart: argo
     repoURL: https://argoproj.github.io/argo-helm
     targetRevision: 0.13.8
+    helm:
+      values: |-
+        installCRD: false
+        server:
+          ingress:
+            enabled: true
+            annotations:
+              kubernetes.io/ingress.class: nginx
+            hosts:
+              - argo.test
   syncPolicy:
     automated:
       prune: true
