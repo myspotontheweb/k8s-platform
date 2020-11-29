@@ -110,7 +110,7 @@ argocd account update-password
 
 ## Bootstrap platform
 
-Create an app that runs other apps
+Create an [app that runs other apps](https://argoproj.github.io/argo-cd/operator-manual/cluster-bootstrapping)
 
 ```
 argocd app create bootstrap \
