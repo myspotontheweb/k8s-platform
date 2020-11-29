@@ -1,4 +1,18 @@
 
+Table of Contents
+=================
+
+   * [Software tools](#software-tools)
+   * [Create Cluster](#create-cluster)
+      * [/etc/hosts](#etchosts)
+   * [Install ArgoCD](#install-argocd)
+      * [Login   Reset password](#login--reset-password)
+      * [Bootstrap platform](#bootstrap-platform)
+      * [Check UI](#check-ui)
+
+Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
+
+
 # Software tools
 
 * kubectl
