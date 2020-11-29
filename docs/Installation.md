@@ -8,10 +8,9 @@ Table of Contents
    * [Install ArgoCD](#install-argocd)
       * [Login   Reset password](#login--reset-password)
       * [Bootstrap platform](#bootstrap-platform)
-      * [Check UI](#check-ui)
+   * [Check Web UIs](#check-web-uis)
 
 Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
-
 
 # Software tools
 
@@ -127,7 +126,9 @@ Sync the boostrap app
 argocd app sync bootstrap
 ```
 
-## Check UI
+# Check Web UIs
 
 * https://argocd.test
+* https://argo.test
+* https://minio.test
 
