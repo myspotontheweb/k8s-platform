@@ -110,14 +110,21 @@ argocd account update-password
 
 ## Bootstrap platform
 
+Create an app that runs other apps
+
 ```
-argocd app create apps \
+argocd app create bootstrap \
     --dest-namespace argocd \
     --dest-server https://kubernetes.default.svc \
     --repo https://github.com/myspotontheweb/k8s-platform.git \
     --path bootstrap/chart  
 
-argocd app sync apps 
+```
+
+Sync the boostrap app
+
+```
+argocd app sync bootstrap
 ```
 
 ## Check UI
