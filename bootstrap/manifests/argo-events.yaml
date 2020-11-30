@@ -12,6 +12,9 @@ spec:
     chart: argo-events
     repoURL: https://argoproj.github.io/argo-helm
     targetRevision: 1.0.0
+    helm:
+      values: |-
+        singleNamespace: false
   syncPolicy:
     automated:
       prune: true
