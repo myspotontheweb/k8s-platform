@@ -118,9 +118,3 @@ argocd app create bootstrap \
     --self-heal  
 ```
 
-# Check Web UIs
-
-* https://argocd.test
-* https://argo.test
-* https://minio.test
-
