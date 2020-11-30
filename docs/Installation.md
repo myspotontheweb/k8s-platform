@@ -24,6 +24,10 @@ Run the bootstrap script that will startup minikube and install the platform too
 . bootstrap/minikube.sh
 ```
 
+Note:
+
+* The initial "bootstrap" app will take time to be sync'ed.
+
 ## /etc/hosts
 
 Setup IP addresses for ingress end-points

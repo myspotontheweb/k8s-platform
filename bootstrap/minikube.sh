@@ -45,10 +45,11 @@ END
 #
 # Bootstrap platform
 #
+kubectl -n argocd wait --for condition=ready pods -l  app.kubernetes.io/name=argocd-application-controller --timeout=180s
 kubectl apply -f bootstrap/application.yaml
 
 #
-# Wait for Argo CD to be ready
+# Wait
 #
 kubectl -n argocd wait --for condition=ready pods -l app.kubernetes.io/name=argocd-server --timeout=180s
 
