@@ -6,4 +6,9 @@ Software setup:
 
 * [Installation](docs/Installation.md)
 
+The following software us install onto the Kubernetes cluster
+
+* Argo CD
+* Argo Workflows
+* Argo Events
 
