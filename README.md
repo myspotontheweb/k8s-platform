@@ -1,6 +1,6 @@
 # k8s-platform
 
-An example Dev plaform deployed on k8s
+An example Dev platform deployed on k8s
 
 Software setup:
 
