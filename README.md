@@ -6,12 +6,12 @@ Software setup:
 
 * [Installation](docs/Installation.md)
 
-The following software us install onto the Kubernetes cluster
+The following software is installed onto the Kubernetes cluster:
 
-* Argo CD
-* Argo Workflows
-* Argo Events
-* Minio
+* [Argo CD](https://argoproj.github.io/argo-cd/)
+* [Argo Workflows](https://argoproj.github.io/argo/)
+* [Argo Events](https://argoproj.github.io/argo-events/)
+* [Minio](https://min.io/)
 
 # Web UIs
 
