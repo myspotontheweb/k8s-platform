@@ -7,7 +7,7 @@ spec:
   project: default
   destination:
     namespace: argo
-    server: {{ .Values.spec.destination.server }}
+    server: https://kubernetes.default.svc
   source:
     chart: argo
     repoURL: https://argoproj.github.io/argo-helm

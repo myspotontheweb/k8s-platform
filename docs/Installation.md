@@ -91,14 +91,10 @@ Retrieve initial password
 kubectl get pods -n argocd -l app.kubernetes.io/name=argocd-server -o name | cut -d'/' -f 2
 ```
 
-Login
+Login as "admin"
 
 ```
-$ argocd login argocd.test --insecure
-Username: admin
-Password: 
-'admin' logged in successfully
-Context 'argocd.test' updated
+argocd login argocd.test --insecure
 ```
 
 Change the password
@@ -116,14 +112,10 @@ argocd app create bootstrap \
     --dest-namespace argocd \
     --dest-server https://kubernetes.default.svc \
     --repo https://github.com/myspotontheweb/k8s-platform.git \
-    --path bootstrap/chart  
-
-```
-
-Sync the boostrap app
-
-```
-argocd app sync bootstrap
+    --path bootstrap/manifests \
+    --sync-policy automated \
+    --auto-prune \
+    --self-heal  
 ```
 
 # Check Web UIs
