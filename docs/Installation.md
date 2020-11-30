@@ -8,7 +8,6 @@ Table of Contents
    * [Install ArgoCD](#install-argocd)
       * [Login   Reset password](#login--reset-password)
       * [Bootstrap platform](#bootstrap-platform)
-   * [Check Web UIs](#check-web-uis)
 
 Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
 
