@@ -43,7 +43,7 @@ echo XXXXXXX | faas-cli login -g https://gateway.openfaas.test -u ZZZZZZ -s --tl
 Deploy some stuff
 
 ```
-OPENFAAS_URL=https://gateway.openfaas.test
+export OPENFAAS_URL=https://gateway.openfaas.test
 
 faas-cli deploy -f https://raw.githubusercontent.com/openfaas/faas/master/stack.yml --tls-no-verify
 ```
