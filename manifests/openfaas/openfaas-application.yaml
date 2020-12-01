@@ -1,0 +1,34 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: openfaas
+  namespace: argocd
+spec:
+  project: default
+  destination:
+    namespace: openfaas
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: https://openfaas.github.io/faas-netes
+    chart: openfaas
+    targetRevision: 6.2.0
+    helm:
+      values: |-
+        generateBasicAuth: true
+        ingress:
+          enabled: true
+          hosts:
+            - host: gateway.openfaas.test
+              serviceName: gateway
+              servicePort: 8080
+              path: /
+            - host: prometheus.openfaas.test
+              serviceName: prometheus
+              servicePort: 9090
+              path: /
+          annotations:
+            kubernetes.io/ingress.class: nginx
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
