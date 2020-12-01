@@ -12,10 +12,31 @@ The following software is installed onto the Kubernetes cluster:
 * [Argo Workflows](https://argoproj.github.io/argo/)
 * [Argo Events](https://argoproj.github.io/argo-events/)
 * [Minio](https://min.io/)
+* [OpenFaas](https://www.openfaas.com/)
 
-# Web UIs
+## Argo Projects
 
 * https://argocd.test
 * https://argo.test
+
+## Minio
+
 * https://minio.test
+
+## OpenFaas
+
+* https://gateway.openfaas.test
+* https://prometheus.openfaas.test
+
+The following command
+
+```
+kubectl -n openfaas get secret basic-auth -ogo-template='{{printf "echo %s | faas-cli login -g https://gateway.openfaas.test -u %s -s --tls-no-verify\n" (index .data "basic-auth-password"|base64decode) (index .data "basic-auth-user"|base64decode)}}'
+```
+
+Generates a CLI login
+
+```
+echo XXXXXXX | faas-cli login -g https://gateway.openfaas.test -u ZZZZZZ -s --tls-no-verify
+```
 

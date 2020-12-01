@@ -33,7 +33,7 @@ Note:
 Setup IP addresses for ingress end-points
 
 ```
-echo "$(minikube ip) argocd.test argo.test minio.test" | sudo tee -a /etc/hosts
+echo "$(minikube ip) argocd.test argo.test minio.test gateway.openfaas.test prometheus.openfaas.test" | sudo tee -a /etc/hosts
 ```
 
 ## Reset ArgoCD password
