@@ -1,8 +1,15 @@
 
 #
 # Start a minikube cluster
+# Uses hyperkit for MacOS and Docker for Linux
 #
-minikube start --driver=docker --kubernetes-version=v1.16.15
+
+case "$OSTYPE" in
+  darwin*)  minikube start --driver=hyperkit --kubernetes-version=v1.16.15 ;;
+  linux*)   minikube start --driver=docker --kubernetes-version=v1.16.15 ;;
+  *)        echo "Uknown/Incompatible OSTYPE: $OSTYPE" ;;
+esac
+
 
 #
 # Enable and configure Ingress
