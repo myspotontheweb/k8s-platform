@@ -5,8 +5,8 @@
 #
 
 case "$OSTYPE" in
-  darwin*)  minikube start --driver=hyperkit --kubernetes-version=v1.16.15 ;;
-  linux*)   minikube start --driver=docker --kubernetes-version=v1.16.15 ;;
+  darwin*)  minikube start --driver=hyperkit --kubernetes-version=${K8S_VERSION:-stable} ;;
+  linux*)   minikube start --driver=docker --kubernetes-version=${K8S_VERSION:-stable} ;;
   *)        echo "Uknown/Incompatible OSTYPE: $OSTYPE" ;;
 esac
 
