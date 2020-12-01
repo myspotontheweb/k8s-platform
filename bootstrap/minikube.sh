@@ -43,13 +43,15 @@ spec:
 END
 
 #
-# Bootstrap platform
-#
-kubectl -n argocd wait --for condition=ready pods -l  app.kubernetes.io/name=argocd-application-controller --timeout=180s
-kubectl apply -f bootstrap/application.yaml
-
-#
 # Wait
 #
-kubectl -n argocd wait --for condition=ready pods -l app.kubernetes.io/name=argocd-server --timeout=180s
+kubectl -n argocd wait --for condition=ready pods -l  app.kubernetes.io/name=argocd-application-controller --timeout=180s
+kubectl -n argocd wait --for condition=ready pods -l  app.kubernetes.io/name=argocd-dex-server --timeout=180s
+kubectl -n argocd wait --for condition=ready pods -l  app.kubernetes.io/name=argocd-redis --timeout=180s
+kubectl -n argocd wait --for condition=ready pods -l  app.kubernetes.io/name=argocd-repo-server --timeout=180s
+kubectl -n argocd wait --for condition=ready pods -l  app.kubernetes.io/name=argocd-application-controller --timeout=180s
 
+#
+# Bootstrap platform
+#
+kubectl apply -f bootstrap/application.yaml

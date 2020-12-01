@@ -9,8 +9,10 @@ spec:
     namespace: argocd
     server: https://kubernetes.default.svc
   source:
-    path: manifests
     repoURL: https://github.com/myspotontheweb/k8s-platform.git
+    path: manifests
+    directory:
+      recurse: true
   syncPolicy:
     automated:
       prune: true
